@@ -105,6 +105,21 @@
     </div>
   </div>
 
- <img src="images/cat.png" alt="cat" class="cat" />
+ <img id="catImage" alt="Random Cat" class="cat" />
+  
+  <script>
+  const catImages = [
+    "images/cat.png",
+    "images/cat1.png",
+    "images/cat2.png"
+    // Добавь сюда больше котиков при необходимости
+  ];
+
+  const randomIndex = Math.floor(Math.random() * catImages.length);
+  const selectedCat = catImages[randomIndex];
+
+  document.getElementById("catImage").src = selectedCat;
+</script>
+  
 </body>
 </html>
