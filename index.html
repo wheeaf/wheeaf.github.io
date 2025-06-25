@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> <link rel="icon" type="image/png" href="images/favicon.png"> 
-
+<head>
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Iuliia Vinichenko — Data Analyst</title>
@@ -13,8 +13,26 @@
       color: #030027;
     }
 
+    .lang-switcher {
+      text-align: right;
+      padding: 20px 40px 0 40px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .lang-switcher .lang {
+      cursor: pointer;
+      color: #151E3F;
+      text-decoration: underline;
+    }
+
+    .lang-switcher .active {
+      font-weight: bold;
+      text-decoration: none;
+    }
+
     .container {
-      padding: 40px;
+      padding: 20px 40px 40px 40px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 40px;
@@ -35,7 +53,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      padding: 40px;
+      padding: 0 40px 40px 40px;
     }
 
     .cat {
@@ -50,6 +68,11 @@
   </style>
 </head>
 <body>
+
+  <div class="lang-switcher">
+    <span class="lang active" data-lang="en">ENG</span> / <span class="lang" data-lang="ru">RU</span>
+  </div>
+
   <div class="container">
     <div>
       <h1>Iuliia Vinichenko</h1>
@@ -57,73 +80,123 @@
         <p><strong>email:</strong><br><strong>telegram:</strong></p>
       </div>
       <div class="box">
-        <p>Passionated data analyst with marketing background ready to die for a pizza slice. Just for your knowledge.</p>
+        <p data-i18n="intro">Passionated data analyst with marketing background ready to die for a pizza slice. Just for your knowledge.</p>
       </div>
       <div class="box">
-        <p>job history</p>
+        <p data-i18n="job">job history</p>
       </div>
     </div>
     <div>
-      <h1>Data Analyst</h1>
+      <h1 data-i18n="title">Data Analyst</h1>
       <div class="box">
-        <p>Abilities as if i would be an npc player:<br>
-        SQL: SELECT, JOIN, GROUP BY (mysql mostly)<br>
-        Tableau: simple dashboards<br>
-        Python: pandas, matplotlib, other bibs<br>
-        GIT, ChatGPT, your mom., english 100500</p>
+        <p data-i18n="skills">Abilities as if i would be an npc player:<br>
+          SQL: SELECT, JOIN, GROUP BY (mysql mostly)<br>
+          Tableau: simple dashboards<br>
+          Python: pandas, matplotlib, other bibs<br>
+          GIT, ChatGPT, your mom., english 100500</p>
       </div>
       <div class="box">
-        <p>UrFU IEN 2015 -- 2016, Chemistry<br>
-        Google Data Analyst<br>
-        META Statistics Foundation<br>
-        IBM Python for Data Analysis<br>
-        [‘also Tableau course’]</p>
+        <p data-i18n="edu">UrFU IEN 2015 -- 2016, Chemistry<br>
+          Google Data Analyst<br>
+          META Statistics Foundation<br>
+          IBM Python for Data Analysis<br>
+          [‘also Tableau course’]</p>
       </div>
     </div>
   </div>
 
-  <h2 style="padding: 0 40px;">Small projects that I`ve made</h2>
+  <h2 style="padding: 0 40px;" data-i18n="projectsTitle">Small projects that I`ve made</h2>
   <div class="projects">
     <div class="box">
       <p><strong>SQL exploration</strong><br>
-      describrion<br>
-      check the code -- link on git</p>
+        <span data-i18n="projectDesc">describrion</span><br>
+        <span data-i18n="projectLink">check the code -- link on git</span>
+      </p>
     </div>
     <div class="box">
       <p><strong>SQL exploration</strong><br>
-      describrion<br>
-      check the code -- link on git</p>
+        <span data-i18n="projectDesc">describrion</span><br>
+        <span data-i18n="projectLink">check the code -- link on git</span>
+      </p>
     </div>
     <div class="box">
       <p><strong>SQL exploration</strong><br>
-      describrion<br>
-      check the code -- link on git</p>
+        <span data-i18n="projectDesc">describrion</span><br>
+        <span data-i18n="projectLink">check the code -- link on git</span>
+      </p>
     </div>
     <div class="box">
       <p><strong>SQL exploration</strong><br>
-      describrion<br>
-      check the code -- link on git</p>
+        <span data-i18n="projectDesc">describrion</span><br>
+        <span data-i18n="projectLink">check the code -- link on git</span>
+      </p>
     </div>
   </div>
 
- <img id="catImage" alt="Random Cat" class="cat" />
-  
+  <img id="catImage" alt="Random Cat" class="cat" />
+
   <script>
-  const catImages = [
-    "images/cat.png",
-    "images/cat1.png",
-    "images/cat2.png",
-    "images/cat3.png",
-    "images/cat4.png",
-    "images/cat5.png"
-    // Добавь сюда больше котиков при необходимости
-  ];
+    // 🐱 Random cat logic
+    const catImages = [
+      "images/cat.png",
+      "images/cat1.png",
+      "images/cat2.png",
+      "images/cat3.png",
+      "images/cat4.png",
+      "images/cat5.png"
+    ];
+    document.getElementById("catImage").src = catImages[Math.floor(Math.random() * catImages.length)];
 
-  const randomIndex = Math.floor(Math.random() * catImages.length);
-  const selectedCat = catImages[randomIndex];
+    // 🌐 Translations
+    const translations = {
+      ru: {
+        intro: "Увлечённый аналитик данных с маркетинговым бэкграундом. Готова умереть за кусок пиццы. Просто чтоб ты знал.",
+        job: "опыт работы",
+        title: "Аналитик данных",
+        skills: "Умения, как будто я NPC-персонаж:<br>SQL: SELECT, JOIN, GROUP BY (в основном MySQL)<br>Tableau: простые дашборды<br>Python: pandas, matplotlib, другие бибы<br>GIT, ChatGPT, твоя мама, английский 100500",
+        edu: "УрФУ ИЕН 2015 — 2016, Химия<br>Google Data Analyst<br>META Statistics Foundation<br>IBM Python for Data Analysis<br>[ещё курс по Tableau]",
+        projectsTitle: "Маленькие проекты, которые я сделала",
+        projectDesc: "описание",
+        projectLink: "смотри код — ссылка на гит"
+      },
+      en: {
+        intro: "Passionated data analyst with marketing background ready to die for a pizza slice. Just for your knowledge.",
+        job: "job history",
+        title: "Data Analyst",
+        skills: "Abilities as if i would be an npc player:<br>SQL: SELECT, JOIN, GROUP BY (mysql mostly)<br>Tableau: simple dashboards<br>Python: pandas, matplotlib, other bibs<br>GIT, ChatGPT, your mom., english 100500",
+        edu: "UrFU IEN 2015 -- 2016, Chemistry<br>Google Data Analyst<br>META Statistics Foundation<br>IBM Python for Data Analysis<br>[‘also Tableau course’]",
+        projectsTitle: "Small projects that I`ve made",
+        projectDesc: "describrion",
+        projectLink: "check the code -- link on git"
+      }
+    };
 
-  document.getElementById("catImage").src = selectedCat;
-</script>
-  
+    let currentLang = 'en';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        el.innerHTML = translations[lang][key];
+      });
+
+      document.querySelectorAll('.lang').forEach(el => {
+        el.classList.remove('active');
+        if (el.dataset.lang === lang) {
+          el.classList.add('active');
+        }
+      });
+    }
+
+    document.querySelectorAll('.lang').forEach(el => {
+      el.addEventListener('click', () => {
+        setLanguage(el.dataset.lang);
+      });
+    });
+
+    // Initialize default language
+    setLanguage(currentLang);
+  </script>
+
 </body>
 </html>
