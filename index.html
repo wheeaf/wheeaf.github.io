@@ -15,7 +15,7 @@
 
     .lang-switcher {
       text-align: right;
-      padding: 20px 40px 0 40px;
+      padding: 20px 100px 0 100px;
       font-family: 'Courier New', monospace;
       font-size: 14px;
     }
@@ -32,17 +32,23 @@
     }
 
     .container {
-      padding: 20px 40px 40px 40px;
+      padding: 20px 100px 40px 100px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 40px;
+      align-items: start;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
     .box {
       border: 1px dashed #151E3F;
       border-radius: 20px;
       padding: 20px;
-      margin-bottom: 20px;
     }
 
     h1, h2 {
@@ -53,7 +59,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      padding: 0 40px 40px 40px;
+      padding: 0 100px 40px 100px;
     }
 
     .cat {
@@ -65,6 +71,77 @@
       width: 120px;
       pointer-events: none;
     }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .lang-switcher {
+        padding: 15px 20px 0 20px;
+        font-size: 12px;
+      }
+
+      .container {
+        padding: 20px 20px 40px 20px;
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .projects {
+        padding: 0 20px 40px 20px;
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+        margin: 0 0 10px 0;
+      }
+
+      h2 {
+        padding: 0 20px !important;
+        font-size: 1.3rem;
+      }
+
+      .box {
+        padding: 15px;
+      }
+
+      .cat {
+        width: 80px;
+      }
+    }
+
+    /* Small mobile devices */
+    @media (max-width: 480px) {
+      .lang-switcher {
+        padding: 10px 15px 0 15px;
+      }
+
+      .container {
+        padding: 15px 15px 30px 15px;
+        gap: 25px;
+      }
+
+      .projects {
+        padding: 0 15px 30px 15px;
+      }
+
+      h1 {
+        font-size: 1.3rem;
+      }
+
+      h2 {
+        padding: 0 15px !important;
+        font-size: 1.2rem;
+      }
+
+      .box {
+        padding: 12px;
+        font-size: 14px;
+      }
+
+      .cat {
+        width: 60px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -73,39 +150,51 @@
     <span class="lang active" data-lang="en">ENG</span> / <span class="lang" data-lang="ru">RU</span>
   </div>
 
-  <div class="container">
-    <div>
-      <h1>Iuliia Vinichenko</h1>
-      <div class="box">
-        <p><strong>email:</strong><br><strong>telegram:</strong></p>
-      </div>
-      <div class="box">
-        <p data-i18n="intro">Passionated data analyst with marketing background ready to die for a pizza slice. Just for your knowledge.</p>
-      </div>
-      <div class="box">
-        <p data-i18n="job">job history</p>
-      </div>
+<div class="container">
+  <!-- Column 1 -->
+  <div class="column">
+    <h1>Iuliia Vinichenko</h1>
+    <div class="box">
+      <p><strong>email:</strong><br><strong>telegram:</strong></p>
     </div>
-    <div>
-      <h1 data-i18n="title">Data Analyst</h1>
-      <div class="box">
-        <p data-i18n="skills">Abilities as if i would be an npc player:<br>
-          SQL: SELECT, JOIN, GROUP BY (mysql mostly)<br>
-          Tableau: simple dashboards<br>
-          Python: pandas, matplotlib, other bibs<br>
-          GIT, ChatGPT, your mom., english 100500</p>
-      </div>
-      <div class="box">
-        <p data-i18n="edu">UrFU IEN 2015 -- 2016, Chemistry<br>
-          Google Data Analyst<br>
-          META Statistics Foundation<br>
-          IBM Python for Data Analysis<br>
-          [‘also Tableau course’]</p>
-      </div>
+    <div class="box">
+      <p><strong>email:</strong><br><strong>telegram:</strong></p>
     </div>
   </div>
 
-  <h2 style="padding: 0 40px;" data-i18n="projectsTitle">Small projects that I`ve made</h2>
+  <!-- Column 2 -->
+  <div class="column">
+    <h1>About</h1>
+    <div class="box">
+      <p data-i18n="intro">Passionated data analyst with marketing background ready to die for a pizza slice. Just for your knowledge.</p>
+    </div>
+    <div class="box">
+      <p data-i18n="job">job history</p>
+    </div>
+  </div>
+
+  <!-- Column 3 -->
+  <div class="column">
+    <h1 data-i18n="title">Data Analyst</h1>
+    <div class="box">
+      <p data-i18n="skills">Abilities as if i would be an npc player:<br>
+        SQL: SELECT, JOIN, GROUP BY (mysql mostly)<br>
+        Tableau: simple dashboards<br>
+        Python: pandas, matplotlib, other bibs<br>
+        GIT, ChatGPT, your mom., english 100500</p>
+    </div>
+    <div class="box">
+      <p data-i18n="edu">UrFU IEN 2015 -- 2016, Chemistry<br>
+        Google Data Analyst<br>
+        META Statistics Foundation<br>
+        IBM Python for Data Analysis<br>
+        ['also Tableau course']</p>
+    </div>
+  </div>
+</div>
+
+
+  <h2 style="padding: 0 100px;" data-i18n="projectsTitle">Small projects that I`ve made</h2>
   <div class="projects">
     <div class="box">
       <p><strong>SQL exploration</strong><br>
@@ -136,7 +225,6 @@
   <img id="catImage" alt="Random Cat" class="cat" />
 
   <script>
-    // 🐱 Random cat logic
     const catImages = [
       "images/cat.png",
       "images/cat1.png",
@@ -147,7 +235,6 @@
     ];
     document.getElementById("catImage").src = catImages[Math.floor(Math.random() * catImages.length)];
 
-    // 🌐 Translations
     const translations = {
       ru: {
         intro: "Увлечённый аналитик данных с маркетинговым бэкграундом. Готова умереть за кусок пиццы. Просто чтоб ты знал.",
@@ -164,7 +251,7 @@
         job: "job history",
         title: "Data Analyst",
         skills: "Abilities as if i would be an npc player:<br>SQL: SELECT, JOIN, GROUP BY (mysql mostly)<br>Tableau: simple dashboards<br>Python: pandas, matplotlib, other bibs<br>GIT, ChatGPT, your mom., english 100500",
-        edu: "UrFU IEN 2015 -- 2016, Chemistry<br>Google Data Analyst<br>META Statistics Foundation<br>IBM Python for Data Analysis<br>[‘also Tableau course’]",
+        edu: "UrFU IEN 2015 -- 2016, Chemistry<br>Google Data Analyst<br>META Statistics Foundation<br>IBM Python for Data Analysis<br>['also Tableau course']",
         projectsTitle: "Small projects that I`ve made",
         projectDesc: "describrion",
         projectLink: "check the code -- link on git"
@@ -194,7 +281,6 @@
       });
     });
 
-    // Initialize default language
     setLanguage(currentLang);
   </script>
 
