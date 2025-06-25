@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+      <!DOCTYPE html>
 <html lang="en">
 <head>
   <link rel="icon" type="image/png" href="images/favicon.png">
@@ -6,6 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Iuliia Vinichenko — Data Analyst</title>
   <style>
+    h1 {
+        font-size: 1.5rem;
+        margin: 0;
+        padding: 15px; /* Такие же отступы как у .box в мобильной версии */
+      }
+
+      h1 {
+        font-size: 1.5rem;
+        padding: 12px; /* Такие же отступы как у .box */
+      }
     body {
       margin: 0;
       background-color: #FFFCF2;
@@ -46,13 +57,21 @@
     }
 
     .box {
-      border: 1px dashed #151E3F;
       border-radius: 20px;
       padding: 20px;
     }
 
-    h1, h2 {
+    /* Основное исправление - убираем отступы у заголовков и делаем такие же как у блоков */
+    h1 {
       color: #151E3F;
+      margin: 0; /* Убираем стандартные отступы браузера */
+      padding: 20px; /* Добавляем такие же отступы как у .box */
+    }
+    
+    h2 {
+      color: #151E3F;
+      margin: 0;
+      padding: 20px 120px; /* Выравниваем с контентом внутри блоков */
     }
 
     .projects {
@@ -72,7 +91,12 @@
       pointer-events: none;
     }
 
-    /* Mobile responsiveness */
+    .contact-link {
+      color: #151E3F;
+      text-decoration: underline;
+      word-break: break-word;
+    }
+
     @media (max-width: 768px) {
       .lang-switcher {
         padding: 15px 20px 0 20px;
@@ -85,19 +109,15 @@
         gap: 30px;
       }
 
+      h2 {
+        padding: 15px 35px; /* 20px + 15px = 35px для выравнивания с текстом внутри блоков */
+        font-size: 1.3rem;
+        margin: 0;
+      }
+
       .projects {
         padding: 0 20px 40px 20px;
         grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 1.5rem;
-        margin: 0 0 10px 0;
-      }
-
-      h2 {
-        padding: 0 20px !important;
-        font-size: 1.3rem;
       }
 
       .box {
@@ -109,7 +129,6 @@
       }
     }
 
-    /* Small mobile devices */
     @media (max-width: 480px) {
       .lang-switcher {
         padding: 10px 15px 0 15px;
@@ -120,17 +139,13 @@
         gap: 25px;
       }
 
+      h2 {
+        padding: 12px 27px; /* 15px + 12px = 27px для выравнивания с текстом внутри блоков */
+        font-size: 1.2rem;
+      }
+
       .projects {
         padding: 0 15px 30px 15px;
-      }
-
-      h1 {
-        font-size: 1.3rem;
-      }
-
-      h2 {
-        padding: 0 15px !important;
-        font-size: 1.2rem;
       }
 
       .box {
@@ -142,12 +157,6 @@
         width: 60px;
       }
     }
-
-   .contact-link {
-  color: #151E3F;
-  text-decoration: underline;
-  word-break: break-word;
-}
   </style>
 </head>
 <body>
@@ -156,62 +165,56 @@
     <span class="lang active" data-lang="en">ENG</span> / <span class="lang" data-lang="ru">RU</span>
   </div>
 
-<div class="container">
-  <!-- Column 1 -->
-<div class="column">
-  <h1>Iuliia Vinichenko</h1>
+  <div class="container">
+    <!-- Column 1 -->
+    <div class="column">
+      <h1>Iuliia Vinichenko</h1>
 
-  <!-- Фото -->
-  <div class="box">
-    <img src="images/photo.jpg" alt="Photo of Iuliia" style="width: 100%; height: auto; border-radius: 15px;" />
-  </div>
+      <div class="box">
+        <img src="images/photo.jpg" alt="Photo of Iuliia" style="width: 100%; height: auto; border-radius: 15px;" />
+      </div>
 
-  <!-- Контакты -->
-  <div class="box">
-    <p>
-      <strong>telegram:</strong><br>
-      <a href="https://t.me/wheaaf" target="_blank" class="contact-link">@wheaaf</a>
-    </p>
-    <p>
-      <strong>linkedin:</strong><br>
-      <a href="https://www.linkedin.com/in/iuliia-vinichenko-19a6ba223/" target="_blank" class="contact-link">Iuliia Vinichenko</a>
-    </p>
-  </div>
-</div>
-
-  <!-- Column 2 -->
-  <div class="column">
-    <h1>About</h1>
-    <div class="box">
-      <p data-i18n="intro">Passionated data analyst with marketing background ready to die for a pizza slice. Just for your knowledge.</p>
+      <div class="box">
+        <p style="display: flex; gap: 15px; flex-wrap: wrap; align-items: center; margin: 0;">
+          <a href="https://t.me/wheaaf" target="_blank" class="contact-link">@wheaaf</a>
+          <span style="color: #aaa;">|</span>
+          <a href="https://www.linkedin.com/in/iuliia-vinichenko-19a6ba223/" target="_blank" class="contact-link">LinkedIn</a>
+        </p>
+      </div>
     </div>
-    <div class="box">
-      <p data-i18n="job">job history</p>
-    </div>
-  </div>
 
-  <!-- Column 3 -->
-  <div class="column">
-    <h1 data-i18n="title">Data Analyst</h1>
-    <div class="box">
-      <p data-i18n="skills">Abilities as if i would be an npc player:<br>
-        SQL: SELECT, JOIN, GROUP BY (mysql mostly)<br>
-        Tableau: simple dashboards<br>
-        Python: pandas, matplotlib, other bibs<br>
-        GIT, ChatGPT, your mom., english 100500</p>
+    <!-- Column 2 -->
+    <div class="column">
+      <h1>About</h1>
+      <div class="box">
+        <p data-i18n="intro">Passionated data analyst with marketing background ready to die for a pizza slice. Just for your knowledge.</p>
+      </div>
+      <div class="box">
+        <p data-i18n="job">job history</p>
+      </div>
     </div>
-    <div class="box">
-      <p data-i18n="edu">UrFU IEN 2015 -- 2016, Chemistry<br>
-        Google Data Analyst<br>
-        META Statistics Foundation<br>
-        IBM Python for Data Analysis<br>
-        ['also Tableau course']</p>
+
+    <!-- Column 3 -->
+    <div class="column">
+      <h1 data-i18n="title">Data Analyst</h1>
+      <div class="box">
+        <p data-i18n="skills">Abilities as if i would be an npc player:<br>
+          SQL: SELECT, JOIN, GROUP BY (mysql mostly)<br>
+          Tableau: simple dashboards<br>
+          Python: pandas, matplotlib, other bibs<br>
+          GIT, ChatGPT, your mom., english 100500</p>
+      </div>
+      <div class="box">
+        <p data-i18n="edu">UrFU IEN 2015 -- 2016, Chemistry<br>
+          Google Data Analyst<br>
+          META Statistics Foundation<br>
+          IBM Python for Data Analysis<br>
+          ['also Tableau course']</p>
+      </div>
     </div>
   </div>
-</div>
 
-
-  <h2 style="padding: 0 100px;" data-i18n="projectsTitle">Small projects that I`ve made</h2>
+  <h2 data-i18n="projectsTitle">Small projects that I`ve made</h2>
   <div class="projects">
     <div class="box">
       <p><strong>SQL exploration</strong><br>
@@ -239,7 +242,7 @@
     </div>
   </div>
 
-  <img id="catImage" alt="Random Cat" class="cat" />
+  <img id="catImage" alt="Random Cat" class="cat" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M60 20 L80 40 L100 20 L100 80 L20 80 L20 20 L40 40 Z' fill='%23FFB6C1'/%3E%3Ccircle cx='45' cy='50' r='3' fill='%23000'/%3E%3Ccircle cx='75' cy='50' r='3' fill='%23000'/%3E%3Cpath d='M55 60 Q60 65 65 60' stroke='%23000' fill='none' stroke-width='2'/%3E%3C/svg%3E" />
 
   <script>
     const catImages = [
@@ -250,7 +253,19 @@
       "images/cat4.png",
       "images/cat5.png"
     ];
-    document.getElementById("catImage").src = catImages[Math.floor(Math.random() * catImages.length)];
+    
+    // Проверяем, есть ли изображения, если нет - оставляем SVG заглушку
+    const catImg = document.getElementById("catImage");
+    const randomCat = catImages[Math.floor(Math.random() * catImages.length)];
+    
+    const testImg = new Image();
+    testImg.onload = function() {
+      catImg.src = randomCat;
+    };
+    testImg.onerror = function() {
+      // Если изображение не загружается, оставляем SVG
+    };
+    testImg.src = randomCat;
 
     const translations = {
       ru: {
