@@ -1,5 +1,4 @@
-
-      <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <link rel="icon" type="image/png" href="images/favicon.png">
@@ -7,16 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Iuliia Vinichenko — Data Analyst</title>
   <style>
-    h1 {
-        font-size: 1.5rem;
-        margin: 0;
-        padding: 15px; /* Такие же отступы как у .box в мобильной версии */
-      }
-
-      h1 {
-        font-size: 1.5rem;
-        padding: 12px; /* Такие же отступы как у .box */
-      }
     body {
       margin: 0;
       background-color: #FFFCF2;
@@ -46,32 +35,32 @@
       padding: 20px 100px 40px 100px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
+      gap: 20px;
       align-items: start;
     }
 
     .column {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 5px; /* Расстояние между блоками в колонке - можно изменять */
     }
 
     .box {
       border-radius: 20px;
-      padding: 20px;
+      padding: 10px;
     }
 
-    /* Основное исправление - убираем отступы у заголовков и делаем такие же как у блоков */
     h1 {
       color: #151E3F;
-      margin: 0; /* Убираем стандартные отступы браузера */
-      padding: 20px; /* Добавляем такие же отступы как у .box */
+      font-size: 1.5rem;
+      margin: 0;
+      padding: 10px;
     }
     
     h2 {
       color: #151E3F;
       margin: 0;
-      padding: 20px 120px; /* Выравниваем с контентом внутри блоков */
+      padding: 5px 110px; /* Отступы заголовка проектов - можно изменять */
     }
 
     .projects {
@@ -106,11 +95,20 @@
       .container {
         padding: 20px 20px 40px 20px;
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 15px; /* Сократили с 30px до 15px */
+      }
+
+      .column {
+        gap: 3px; /* Расстояние между блоками в колонке для планшетов */
+      }
+
+      h1 {
+        font-size: 1.5rem;
+        padding: 7px;
       }
 
       h2 {
-        padding: 15px 35px; /* 20px + 15px = 35px для выравнивания с текстом внутри блоков */
+        padding: 3px 35px; /* Отступы заголовка проектов для планшетов */
         font-size: 1.3rem;
         margin: 0;
       }
@@ -121,7 +119,7 @@
       }
 
       .box {
-        padding: 15px;
+        padding: 7px;
       }
 
       .cat {
@@ -136,11 +134,20 @@
 
       .container {
         padding: 15px 15px 30px 15px;
-        gap: 25px;
+        gap: 12px; /* Сократили с 25px до 12px */
+      }
+
+      .column {
+        gap: 3px; /* Расстояние между блоками в колонке для мобильных */
+      }
+
+      h1 {
+        font-size: 1.5rem;
+        padding: 6px;
       }
 
       h2 {
-        padding: 12px 27px; /* 15px + 12px = 27px для выравнивания с текстом внутри блоков */
+        padding: 3px 27px; /* Отступы заголовка проектов для мобильных */
         font-size: 1.2rem;
       }
 
@@ -149,7 +156,7 @@
       }
 
       .box {
-        padding: 12px;
+        padding: 6px;
         font-size: 14px;
       }
 
