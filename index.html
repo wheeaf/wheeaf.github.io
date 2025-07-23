@@ -208,13 +208,13 @@
 
     <!-- Column 2 -->
     <div class="column">
-      <h1>About</h1>
+      <h1 data-i18n="aboutTitle">About</h1> <!-- присовоила тег data-i18n -->
       <div class="box">
-        <p data-i18n="intro">Passionated data analyst with marketing background ready to die for a pizza slice. Just for your knowledge.</p>
+        <p data-i18n="intro"></p>
       </div>
-       <h1>Job history</h1>
+       <h1 data-i18n="jobTitle">Job history</h1> <!-- присовоила тег data-i18n -->
       <div class="box">
-        <p data-i18n="job">job history</p>
+        <p data-i18n="job"></p>
       </div>
     </div>
 
@@ -222,19 +222,11 @@
     <div class="column">
       <h1 data-i18n="title">Skills</h1>
       <div class="box">
-        <p data-i18n="skills">Abilities as if i would be an npc player:<br>
-          SQL: SELECT, JOIN, GROUP BY (mysql mostly)<br>
-          Tableau: simple dashboards<br>
-          Python: pandas, matplotlib, other bibs<br>
-          GIT, ChatGPT, your mom., english 100500</p>
+        <p data-i18n="skills"></p>
       </div>
-      <h1>Education</h1>
+      <h1 data-i18n="eduTitle">Education</h1> <!-- присовоила тег data-i18n -->
       <div class="box">
-        <p data-i18n="edu">UrFU IEN 2015 -- 2016, Chemistry<br>
-          Google Data Analyst<br>
-          META Statistics Foundation<br>
-          IBM Python for Data Analysis<br>
-          ['also Tableau course']</p>
+        <p data-i18n="edu"></p>
       </div>
     </div>
   </div>
@@ -294,9 +286,10 @@
 
      const translations = {
       ru: {
-        aboutTitle: "Обо мне",
-        jobTitle: "Опыт работы",
-        intro: "Начинающий дата-аналитик. Перешла в сферу из SMM и контент-менеджмента: работа с цифрами и графиками нравится больше, чем с текстами и картинками. Интереснее всего сейчас с языками и библиотеками — SQL, Pandas. Думаю, что в будущем хотела бы развиваться в сторону автоматизации и DataOps",
+        eduTitle: 'Образование',
+        aboutTitle: 'Обо мне',
+        jobTitle: 'Опыт работы',
+        intro: 'Начинающий дата-аналитик. Перешла в сферу из SMM и контент-менеджмента: работа с цифрами и графиками нравится больше, чем с текстами и картинками. Интереснее всего сейчас с языками и библиотеками — SQL, Pandas. Думаю, что в будущем хотела бы развиваться в сторону автоматизации и DataOps',
         job: `<div style="color: #151E3F;">
   <div>
     <strong style="font-size: 18px;">Редактор социальных сетей</strong><br>
@@ -320,7 +313,7 @@
     <strong style="color: red;">♥</strong> Делала тендерные презентации
   </div>
 </div>`,
-        title: "Что умею?",
+        title: 'Что умею?',
         skills: `<strong style="color: red;">♥</strong> <strong style="font-size: 18px;">Мягкие навыки:</strong> работа в команде, умение слушать и слышать, любопытство, внимание к деталям<br>
 <strong style="color: red;">♥</strong> <strong style="font-size: 18px;">Excel:</strong> IF(), VLOOKUP(), TRIM(), Pivot tables, фильтры и сортировка<br>
 <strong style="color: red;">♥</strong> <strong style="font-size: 18px;">mySQL:</strong> SELECT, JOIN, CTE, OVER(PARTITION BY ...), AS<br>
@@ -329,28 +322,47 @@
 <strong style="color: red;">🩻</strong> <strong style="font-size: 18px;">Дополнительно:</strong> Claude, Chat GPT, GitHub, английский B1 <br>
 `
 ,
-        edu: `
-<strong style="color: red;">♥</strong><strong style="font-size: 18px;">Google Data Analytics</strong><br>
-January 2025 — May 2025<br>
+eduTitle: 'Образование',
+        edu: `<strong style="font-size: 18px;">Google Data Analytics<br>
+Январь 2025 — Май 2025</strong><br>
+<strong style="color: red;">♥</strong> Чистка данных <br>
+<strong style="color: red;">♥</strong> Сбор данных <br>
+<strong style="color: red;">♥</strong> Визуализация данных <br>
+<strong style="color: red;">♥</strong> Менеджмент данных <br>
+<strong style="color: red;">♥</strong> Этика данных <br>
+<strong style="color: red;">♥</strong> Реляционные базы данных <br>
 <br>
-<strong style="color: red;">♥</strong><strong style="font-size: 18px;">Meta Statistic Foundations</strong><br>
-February 2025 — March 2025<br>
 <br>
-<strong style="color: red;">♥</strong><strong style="font-size: 18px;">IBM Data Analysis with Python</strong><br>
-May 2025 — August 2025<br>
+<strong style="font-size: 18px;">Meta Statistic Foundations<br>
+Февраль 2025 — Март 2025</strong><br>
+<strong style="color: red;">♥</strong> Описательная статистика <br>
+<strong style="color: red;">♥</strong> Анализ временных рядом <br>
+<strong style="color: red;">♥</strong> Статистика и вероятность <br>
+<strong style="color: red;">♥</strong> Проверка гипотез <br>
 <br>
-<strong style="color: red;">♥</strong><strong style="font-size: 18px;">UrFU Institute of Natural Sciences and Mathematics</strong><br>
-Fundamental and applied chemistry<br>
-2015 — 2016`
+<br>
+<strong style="font-size: 18px;">IBM Data Analysis with Python<br>
+Май 2025 — Август 2025</strong><br>
+<strong style="color: red;">♥</strong> Pandas <br>
+<strong style="color: red;">♥</strong> Jupyter Notebook <br>
+<strong style="color: red;">♥</strong> Data Wrangling <br>
+<strong style="color: red;">♥</strong> Разведочный анализ данных (EDA) <br>
+<strong style="color: red;">♥</strong> Основы построения моделей <br>
+<br>
+<br>
+<strong style="font-size: 18px;">УрФУ Институт Естественных наук и Математики <br>
+2015 — 2016</strong><br>
+Фундаментальная и прикладная химия
+`
 ,
-        projectsTitle: "Маленькие проекты, которые я сделала",
-        projectDesc: "описание",
-        projectLink: "смотри код — ссылка на гит"
+        projectsTitle: 'Маленькие проекты, которые я сделала',
+        projectDesc: 'описание',
+        projectLink: 'смотри код — ссылка на гит'
       },
       en: {
-        aboutTitle: "About",
-        jobTitle: "Job history",
-        intro: "Smol data analyst is here! I switched from social media management because I realized I loved making reports and trying to predict stuff. I’m fond of working with programming languages and libraries — SQL and Pandas. I think that in the future I would like to be a data operationist",
+        aboutTitle: 'About',
+        jobTitle: 'Job history',
+        intro: 'Smol data analyst is here! I switched from social media management because I realized I loved making reports and trying to predict stuff. I’m fond of working with programming languages and libraries — SQL and Pandas. I think that in the future I would like to be a data operationist',
         job: `<div style="color: #151E3F;">
   <div>
     <strong style="font-size: 18px;">Social Media Editor</strong><br>
@@ -375,35 +387,55 @@ Fundamental and applied chemistry<br>
     <strong style="color: red;">♥</strong> Created presentations for tenders
   </div>
 </div>`,
-        title: "Skills",
+        title: 'Skills',
         skills: `
 <strong style="color: red;">♥</strong> <strong style="font-size: 18px;">Soft skills:</strong> collaboration, active listening, curiosity, attention to detail<br>
 <strong style="color: red;">♥</strong> <strong style="font-size: 18px;">Excel:</strong> IF(), VLOOKUP(), TRIM(), Pivot tables, sorting and filtering<br>
 <strong style="color: red;">♥</strong> <strong style="font-size: 18px;">mySQL:</strong> SELECT, JOIN, CTE, OVER(PARTITION BY ...), aliasing<br>
-<strong style="color: red;">♥</strong> <strong style="font-size: 18px;">Pandas:</strong> Jupyter Notebook, VS Code, reading data, missing values, merging, pivot tables, aggregations and grouping<br>
+<strong style="color: red;">♥</strong> <strong style="font-size: 18px;">Pandas:</strong> Jupyter Notebook, VS Code, reading data, missing values, merging, pivot tables, aggregations and grouping, summary statistic<br>
 <strong style="color: red;">♥</strong> <strong style="font-size: 18px;">Tableau:</strong> data connection, joining tables, basic visualization, basic dashboards<br>
 <strong style="color: red;">🩻</strong> <strong style="font-size: 18px;">Extra:</strong> Claude, Chat GPT, GitHub, English B1 <br>
 `,
+eduTitle: 'Education',
         edu: `
-<strong style="color: red;">♥</strong><strong style="font-size: 18px;">Google Data Analytics</strong><br>
-January 2025 — May 2025<br>
+<strong style="font-size: 18px;">Google Data Analytics<br>
+January 2025 — May 2025</strong><br>
+<strong style="color: red;">♥</strong> Data Cleansing <br>
+<strong style="color: red;">♥</strong> Data Collection <br>
+<strong style="color: red;">♥</strong> Data Visualization <br>
+<strong style="color: red;">♥</strong> Data Management <br>
+<strong style="color: red;">♥</strong> Data Ethics <br>
+<strong style="color: red;">♥</strong> Relational Databases <br>
 <br>
-<strong style="color: red;">♥</strong><strong style="font-size: 18px;">Meta Statistic Foundations</strong><br>
-February 2025 — March 2025<br>
 <br>
-<strong style="color: red;">♥</strong><strong style="font-size: 18px;">IBM Data Analysis with Python</strong><br>
-May 2025 — August 2025<br>
+<strong style="font-size: 18px;">Meta Statistic Foundations<br>
+February 2025 — March 2025</strong><br>
+<strong style="color: red;">♥</strong> Descriptive Statistics <br>
+<strong style="color: red;">♥</strong> Time Series Analysis and Forecasting <br>
+<strong style="color: red;">♥</strong> Probability & Statistics <br>
+<strong style="color: red;">♥</strong> Statistical Hypothesis Testing <br>
 <br>
-<strong style="color: red;">♥</strong><strong style="font-size: 18px;">UrFU Institute of Natural Sciences and Mathematics</strong><br>
-Fundamental and applied chemistry<br>
-2015 — 2016`,
-        projectsTitle: "Small projects that I`ve made",
-        projectDesc: "describrion",
-        projectLink: "check the code -- link on git"
+<br>
+<strong style="font-size: 18px;">IBM Data Analysis with Python<br>
+May 2025 — August 2025</strong><br>
+<strong style="color: red;">♥</strong> Pandas <br>
+<strong style="color: red;">♥</strong> Jupyter Notebook <br>
+<strong style="color: red;">♥</strong> Data Wrangling <br>
+<strong style="color: red;">♥</strong> Data Exploratory Analysis <br>
+<strong style="color: red;">♥</strong> Fundamentals of Model Development <br>
+<br>
+<br>
+<strong style="font-size: 18px;">UrFU Institute of Natural Sciences and Mathematics<br>
+2015 — 2016</strong><br>
+Fundamental and applied chemistry
+`,
+        projectsTitle: 'Small projects that I`ve made',
+        projectDesc: 'describrion',
+        projectLink: 'check the code -- link on git'
       }
     };
 
-    let currentLang = 'en';
+    let currentLang = 'ru';
 
     function setLanguage(lang) {
       currentLang = lang;
