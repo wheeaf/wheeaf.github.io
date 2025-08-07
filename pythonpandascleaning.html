@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iuliia Vinichenko — Case Study</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #FAFAFA;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #030027;
+    }
+
+    .lang-switcher {
+      text-align: right;
+      padding: 20px 100px 0 100px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+    }
+
+    .lang-switcher .lang {
+      cursor: pointer;
+      color: #151E3F;
+      text-decoration: underline;
+    }
+
+    .lang-switcher .active {
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .container {
+      padding: 20px 100px 40px 100px;
+      max-width: 1400px; 
+      margin: 0 auto;
+    }
+
+    .content-column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .box {
+      border-radius: 20px;
+      padding: 10px;
+    }
+
+    .code-block {
+      width: 100%;
+      max-width: 100%;
+      height: 200px;
+      overflow: auto;
+      background-color: #F5F5F5;
+      border: 1px solid #E0E0E0;
+      border-radius: 5px;
+      padding: 5px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      line-height: 1.4;
+      white-space: pre;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      color: #151E3F;
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 0 0 0px 0;
+      padding: 10px;
+    }
+
+    h2 {
+      color: #151E3F;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0px 0 0px 0;
+      padding: 0px;
+    }
+
+    h3 {
+      color: #151E3F;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin: 0px 0 0px 0;
+      padding: 10px;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .back-link {
+      color: #151E3F;
+      text-decoration: underline;
+      font-weight: 500;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .back-link:hover {
+      text-decoration: none;
+    }
+
+    .cat {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      width: 70px;
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      .lang-switcher {
+        padding: 15px 20px 0 20px;
+        font-size: 12px;
+      }
+
+      .container {
+        padding: 20px 20px 40px 20px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      .code-block {
+        padding: 8px;
+        font-size: 12px;
+        line-height: 1.3;
+        height: 180px;
+        border-radius: 8px;
+      }
+
+      .box {
+        padding: 15px;
+      }
+
+      .cat {
+        width: 80px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .lang-switcher {
+        padding: 10px 15px 0 15px;
+      }
+
+      .container {
+        padding: 15px 15px 30px 15px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+        padding: 5px;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      .code-block {
+        padding: 10px;
+        font-size: 11px;
+        line-height: 1.2;
+        height: 150px;
+        border-radius: 6px;
+        /* Better text wrapping for very small screens */
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+
+      .box {
+        padding: 12px;
+        font-size: 14px;
+      }
+
+      .cat {
+        width: 60px;
+      }
+    }
+
+    /* Extra small screens */
+    @media (max-width: 360px) {
+      .code-block {
+        font-size: 10px;
+        padding: 8px;
+        height: 130px;
+        /* Allow horizontal scrolling on very small screens */
+        white-space: pre;
+        overflow-x: auto;
+      }
+      
+      .container {
+        padding: 10px;
+      }
+      
+      h1 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-switcher">
+    <span class="lang active" data-lang="en">ENG</span> / <span class="lang" data-lang="ru">RU</span>
+  </div>
+
+  <div class="container">
+    <div class="content-column">
+      <a href="index.html" class="back-link" data-i18n="backLink">← Back to main page</a>
+      
+      <h1 data-i18n="caseTitle">Case Study Title</h1>
+      
+      <div class="box">
+        <h2 data-i18n="overviewTitle">Project Overview</h2>
+        <p data-i18n="overview">
+           
+        </p>
+      </div>
+
+      <div class="box">
+        <h2 data-i18n="dataTitle">Data Description</h2>
+        <p data-i18n="dataDesc">
+          Description of the dataset used, its sources, structure, and key variables.
+          Information about data cleaning and preparation steps.
+        </p>
+      </div>
+
+      <div class="box">
+        <h2 data-i18n="methodologyTitle">Methodology</h2>
+        <p data-i18n="methodology">
+          Explanation of the analytical approach, tools used, and reasoning behind chosen methods.
+          Step-by-step breakdown of the analysis process.
+        </p>
+      </div>
+
+      <div class="code-block">
+        <pre><code>
+       <strong style="color: blueviolet;">INSERT INTO</strong> employee_salary (employee_id, first_name, last_name, occupation, salary, dept_id)
+<strong style="color: blueviolet;">VALUES</strong>
+(1, 'Leslie', 'Knope', 'Deputy Director of Parks and Recreation', 75000,1),
+(2, 'Ron', 'Swanson', 'Director of Parks and Recreation', 70000,1),
+(3, 'Tom', 'Haverford', 'Entrepreneur', 50000,1),
+(4, 'April', 'Ludgate', 'Assistant to the Director of Parks and Recreation', 25000,1),
+(5, 'Jerry', 'Gergich', 'Office Manager', 50000,1),
+(6, 'Donna', 'Meagle', 'Office Manager', 60000,1),
+(7, 'Ann', 'Perkins', 'Nurse', 55000,4),
+(8, 'Chris', 'Traeger', 'City Manager', 90000,3),
+(9, 'Ben', 'Wyatt', 'State Auditor', 70000,6),
+(10, 'Andy', 'Dwyer', 'Shoe Shiner and Musician', 20000, NULL),
+(11, 'Mark', 'Brendanawicz', 'City Planner', 57000, 3),
+(12, 'Craig', 'Middlebrooks', 'Parks Director', 65000,1);
+
+<strong style="color: blueviolet;">CREATE TABLE</strong> parks_departments (
+  department_id <strong style="color: blueviolet;">INT NOT NULL AUTO_INCREMENT</strong>,
+  department_name varchar(50) <strong style="color: blueviolet;">NOT NULL</strong>,
+  <strong style="color: blueviolet;">PRIMARY KEY</strong> (department_id)
+);
+
+<strong style="color: blueviolet;">INSERT INTO</strong> parks_departments (department_name)
+<strong style="color: blueviolet;">VALUES</strong>
+('Parks and Recreation'),
+('Animal Control'),
+('Public Works'),
+('Healthcare'),
+('Library'),
+('Finance');
+          </code></pre>
+      </div>
+    </div>
+
+    <br>
+    <br>
+      <div class="box">
+        <h2 data-i18n="resultsTitle">Results & Insights</h2>
+        <p data-i18n="results">
+          Key findings from the analysis, visualizations, and insights discovered.
+          Discussion of patterns, trends, or anomalies found in the data.
+        </p>
+      </div>
+  </div>
+
+
+
+
+  <img id="catImage" alt="Random Cat" class="cat" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M60 20 L80 40 L100 20 L100 80 L20 80 L20 20 L40 40 Z' fill='%23FFB6C1'/%3E%3Ccircle cx='45' cy='50' r='3' fill='%23000'/%3E%3Ccircle cx='75' cy='50' r='3' fill='%23000'/%3E%3Cpath d='M55 60 Q60 65 65 60' stroke='%23000' fill='none' stroke-width='2'/%3E%3C/svg%3E" />
+
+  <script>
+    const catImages = [
+      "images/cat.png",
+      "images/cat1.png",
+      "images/cat2.png",
+      "images/cat3.png",
+      "images/cat4.png",
+      "images/cat5.png"
+    ];
+    
+    const catImg = document.getElementById("catImage");
+    const randomCat = catImages[Math.floor(Math.random() * catImages.length)];
+    
+    const testImg = new Image();
+    testImg.onload = function() {
+      catImg.src = randomCat;
+    };
+    testImg.onerror = function() {
+      // Если изображение не загружается, оставляем SVG
+    };
+    testImg.src = randomCat;
+
+    const translations = {
+      ru: {
+        backLink: "← Назад",
+        caseTitle: "Очистка базы данных в Pandas",
+        overviewTitle: "Обзор проекта",
+        overview: `
+        Инструменты: Jupyter notebook <br>
+        База данных: маркет старых автомобилей <br>
+        Цель: очистка данных`,
+        dataTitle: "Вопросы бизнеса / Цели",
+        dataDesc: `Очистить данные, избавиться от NaN-значений, заменить типы колонок, переименовать некоторые колонки, перевести значения а более удобный формат`,
+        methodologyTitle: "Ключевые Pandas команды",
+        methodology: `Чистила в mySQL workbench. В ходе чистки сделала копию оригинальной таблицы, чтобы всегда иметь под рукой сырые данные. Добавила временную колонку, чтобы иметь возможность поискать дубликаты. Использовала CTE, команду PATRITION BY (OVER…). Но по большей части это работа с командами SELECT, FROM, WHERE.`,
+        resultsTitle: "Результаты и выводы",
+        results: `<img src="images/layoffs_cleaned.png" alt="result" width="100%"> <br>
+        
+        /картинка/ + пояснение `,
+      },
+      en: {
+        backLink: "← Back to main page",
+        caseTitle: " Pandas cleaning project",
+        overviewTitle: " Project Overview",
+        overview: `Tool: Jupyter notebook<br>
+          Database: old auto market<br>
+          Goal: clean data<br>`,
+        dataTitle: " Business questions / Goal",
+        dataDesc: " br br br",
+        methodologyTitle: "Key Pandas queries",
+        methodology: "Explanation of the analytical approach, tools used, and reasoning behind chosen methods. Step-by-step breakdown of the analysis process.",
+        resultsTitle: "Results & Insights",
+        results: `<img src="images/layoffs_cleaned.png" alt="result" width="100%"> <br>
+         small description and picture of results (perhaps with comments) 
+        `,
+      }
+    };
+
+    let currentLang = 'ru';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+
+      document.querySelectorAll('.lang').forEach(el => {
+        el.classList.remove('active');
+        if (el.dataset.lang === lang) {
+          el.classList.add('active');
+        }
+      });
+    }
+
+    document.querySelectorAll('.lang').forEach(el => {
+      el.addEventListener('click', () => {
+        setLanguage(el.dataset.lang);
+      });
+    });
+
+    setLanguage(currentLang);
+  </script>
+
+</body>
+</html>
