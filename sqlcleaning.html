@@ -36,14 +36,14 @@
 
     .container {
       padding: 20px 100px 40px 100px;
-      max-width: 1400px; 
+      max-width: 1000px; 
       margin: 0 auto;
     }
 
     .content-column {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 5px;
     }
 
     .box {
@@ -54,17 +54,18 @@
     .code-block {
       width: 100%;
       max-width: 100%;
-      height: 200px;
+      height: flex;
       overflow: auto;
       background-color: #F5F5F5;
       border: 1px solid #E0E0E0;
-      border-radius: 5px;
-      padding: 5px;
+      border-radius: 10px;
+      padding: 20px;
       font-family: 'Courier New', monospace;
-      font-size: 14px;
-      line-height: 1.4;
-      white-space: pre;
+      font-size: 20px;
+      line-height: 1.3;
+      white-space: normal;
       box-sizing: border-box;
+      
     }
 
     h1 {
@@ -95,6 +96,12 @@
       line-height: 1.6;
       margin-bottom: 15px;
     }
+
+    small {
+      font-size: 12px;          /* или 0.8em для относительного размера */ 
+      color: gray;              /* серый цвет */
+      font-style: italic;       /* курсив (опционально) */
+}
 
     .back-link {
       color: #151E3F;
@@ -149,7 +156,7 @@
       }
 
       .cat {
-        width: 80px;
+        width: 50px;
       }
     }
 
@@ -233,39 +240,6 @@
         </p>
       </div>
 
-      <div class="code-block">
-        <pre><code>
-        <strong style="color: blueviolet;">INSERT INTO</strong> employee_salary (employee_id, first_name, last_name, occupation, salary, dept_id)
-<strong style="color: blueviolet;">VALUES</strong>
-(1, 'Leslie', 'Knope', 'Deputy Director of Parks and Recreation', 75000,1),
-(2, 'Ron', 'Swanson', 'Director of Parks and Recreation', 70000,1),
-(3, 'Tom', 'Haverford', 'Entrepreneur', 50000,1),
-(4, 'April', 'Ludgate', 'Assistant to the Director of Parks and Recreation', 25000,1),
-(5, 'Jerry', 'Gergich', 'Office Manager', 50000,1),
-(6, 'Donna', 'Meagle', 'Office Manager', 60000,1),
-(7, 'Ann', 'Perkins', 'Nurse', 55000,4),
-(8, 'Chris', 'Traeger', 'City Manager', 90000,3),
-(9, 'Ben', 'Wyatt', 'State Auditor', 70000,6),
-(10, 'Andy', 'Dwyer', 'Shoe Shiner and Musician', 20000, NULL),
-(11, 'Mark', 'Brendanawicz', 'City Planner', 57000, 3),
-(12, 'Craig', 'Middlebrooks', 'Parks Director', 65000,1);
-
-<strong style="color: blueviolet;">CREATE TABLE</strong> parks_departments (
-  department_id <strong style="color: blueviolet;">INT NOT NULL AUTO_INCREMENT</strong>,
-  department_name varchar(50) <strong style="color: blueviolet;">NOT NULL</strong>,
-  <strong style="color: blueviolet;">PRIMARY KEY</strong> (department_id)
-);
-
-<strong style="color: blueviolet;">INSERT INTO</strong> parks_departments (department_name)
-<strong style="color: blueviolet;">VALUES</strong>
-('Parks and Recreation'),
-('Animal Control'),
-('Public Works'),
-('Healthcare'),
-('Library'),
-('Finance');
-          </code></pre>
-      </div>
 
       <div class="box">
         <h2 data-i18n="dataTitle">Data Description</h2>
@@ -283,6 +257,15 @@
         </p>
       </div>
 
+      <div class="code-block" data-i18n="codeContent">
+        <code>
+<strong style="color: green;">ROW_NUMBER()</strong> и <strong style="color: green;">PARTITION BY</strong> — для определения дубликатов по всем ключевым строкам <br>
+<strong style="color: green;">CTE (Common Table Expression)</strong> — временные таблицы для работы с дубликатами <br>
+<strong style="color: green;">TRIM()</strong> — для удаления лишних пробелов и знаков в ячейках <br>
+<strong style="color: green;">JOIN</strong> — для обновления NULL значений из других записей той же компании <br>
+          </code>
+      </div>
+
       <div class="box">
         <h2 data-i18n="resultsTitle">Results & Insights</h2>
         <p data-i18n="results">
@@ -290,42 +273,6 @@
           Discussion of patterns, trends, or anomalies found in the data.
         </p>
       </div>
-
-      <div class="code-block">
-        <pre><code>
-       <strong style="color: blueviolet;">INSERT INTO</strong> employee_salary (employee_id, first_name, last_name, occupation, salary, dept_id)
-<strong style="color: blueviolet;">VALUES</strong>
-(1, 'Leslie', 'Knope', 'Deputy Director of Parks and Recreation', 75000,1),
-(2, 'Ron', 'Swanson', 'Director of Parks and Recreation', 70000,1),
-(3, 'Tom', 'Haverford', 'Entrepreneur', 50000,1),
-(4, 'April', 'Ludgate', 'Assistant to the Director of Parks and Recreation', 25000,1),
-(5, 'Jerry', 'Gergich', 'Office Manager', 50000,1),
-(6, 'Donna', 'Meagle', 'Office Manager', 60000,1),
-(7, 'Ann', 'Perkins', 'Nurse', 55000,4),
-(8, 'Chris', 'Traeger', 'City Manager', 90000,3),
-(9, 'Ben', 'Wyatt', 'State Auditor', 70000,6),
-(10, 'Andy', 'Dwyer', 'Shoe Shiner and Musician', 20000, NULL),
-(11, 'Mark', 'Brendanawicz', 'City Planner', 57000, 3),
-(12, 'Craig', 'Middlebrooks', 'Parks Director', 65000,1);
-
-<strong style="color: blueviolet;">CREATE TABLE</strong> parks_departments (
-  department_id <strong style="color: blueviolet;">INT NOT NULL AUTO_INCREMENT</strong>,
-  department_name varchar(50) <strong style="color: blueviolet;">NOT NULL</strong>,
-  <strong style="color: blueviolet;">PRIMARY KEY</strong> (department_id)
-);
-
-<strong style="color: blueviolet;">INSERT INTO</strong> parks_departments (department_name)
-<strong style="color: blueviolet;">VALUES</strong>
-('Parks and Recreation'),
-('Animal Control'),
-('Public Works'),
-('Healthcare'),
-('Library'),
-('Finance');
-          </code></pre>
-      </div>
-    </div>
-  </div>
 
   <img id="catImage" alt="Random Cat" class="cat" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M60 20 L80 40 L100 20 L100 80 L20 80 L20 20 L40 40 Z' fill='%23FFB6C1'/%3E%3Ccircle cx='45' cy='50' r='3' fill='%23000'/%3E%3Ccircle cx='75' cy='50' r='3' fill='%23000'/%3E%3Cpath d='M55 60 Q60 65 65 60' stroke='%23000' fill='none' stroke-width='2'/%3E%3C/svg%3E" />
 
@@ -355,26 +302,73 @@
       ru: {
         backLink: "← Назад",
         caseTitle: "Очистка базы данных в SQL",
-        overviewTitle: "Обзор проекта",
-        overview: `Задача проекта — очистить базу данных и сделать её пригодной для дальнейшего анализа. В ходе чистки удалила дубликаты строк, привела данные в одинаковый вид (удалила лишние пробелы, восстановила регистр, удалила лишние знаки), удалила NULL-значения там, где это было возможно; удалила ненужные колонки.`,
-        dataTitle: "Описание данных",
-        dataDesc: `Неочищенные данные — база данных об увольнениях в компаниях в период с 2021 по 2023 годы. В таблице типа компаний, локации, тип индустрии, количество уволенных, процентаж уволенных и так далее.`,
-        methodologyTitle: "Методология",
-        methodology: `Чистила в mySQL workbench. В ходе чистки сделала копию оригинальной таблицы, чтобы всегда иметь под рукой сырые данные. Добавила временную колонку, чтобы иметь возможность поискать дубликаты. Использовала CTE, команду PATRITION BY (OVER…). Но по большей части это работа с командами SELECT, FROM, WHERE.`,
-        resultsTitle: "Результаты и выводы",
-        results: `Данные очищены успешно. Не было нерешаемых моментов. `,
+        overviewTitle: " 🔍 Обзор проекта",
+        overview: `Выполнила очистку данных о массовых увольнениях в компаниях по всему миру с целью подготовки датасета для дальнейшего анализа. <br>
+        <br>
+      <strong style="color: red;">•</strong> <strong>Инструменты:</strong> MySQL Workbench 8.0 CE <br>
+      <strong style="color: red;">•</strong> <strong>База данных:</strong> Данные об увольнениях по всему миру в период с 2020 по 2023 годы. Включают информацию по компаниям, локациям, отраслям, количеству уволенных, проценту сокращений и объемам привлеченных инвестиций.<br>
+      <br>
+      <small><strong> Источник: https://github.com/AlexTheAnalyst/MySQL-YouTube-Series/blob/main/layoffs.csv</strong></small>`,
+        dataTitle: " 🎯 Цели проекта",
+        dataDesc: `Очистить данные для дальнейшего исследования: удалить дубли, привести содержимое строк к единому стилю и формату; избавиться от NULL-значений, где это возможно. <br>
+        <br>
+        <strong>Ключевые вопросы:</strong> <br>
+        <strong style="color: red;">•</strong> Можно ли удалить дубли данных без потерь? <br>
+        <strong style="color: red;">•</strong> Как идентифицировать неважные данные? Можно ли от них избавиться? <br>
+         <strong style="color: red;">•</strong> Нужно ли проверять форматы колонок и исправлять их? <br>`,
+        methodologyTitle: "💻 Ключевые SQL команды",
+        codeContent: `<code>
+<strong style="color: red;">ROW_NUMBER()</strong> и <strong style="color: red;">PARTITION BY</strong> — для определения дубликатов по всем ключевым строкам <br>
+<strong style="color: red;">CTE (Common Table Expression)</strong> — временные таблицы для работы с дубликатами <br>
+<strong style="color: red;">TRIM()</strong> — для удаления лишних пробелов и знаков в ячейках <br>
+<strong style="color: red;">JOIN</strong> — для обновления NULL значений из других записей той же компании <br>
+</code>
+`,
+        methodology: ``,
+        resultsTitle: "💡 Результаты и выводы",
+        results: `База данных очищена. Удалены все дублированные записи, стандартизированы названия отраслей и стран. Преобразован формат даты из текстового в DATE для корректных временных вычислений. Удалены записи без ключевой информации об объемах увольнений, это сделало датасет пригодным для последующего анализа. <br>
+        <br>
+        <img src="images/layoffs_cleaned.png" alt="result" width="100%"> <br>
+        <br>
+       <small><strong> Посмотреть весь код на GitHub: https://github.com/AlexTheAnalyst/MySQL-YouTube-Series/blob/main/layoffs.csv</strong></small> 
+ `,
       },
       en: {
-        backLink: "← Back to main page",
+        backLink: "← Back",
         caseTitle: "SQL cleaning project",
-        overviewTitle: "Project Overview",
-        overview: "Brief description of the project, what problem it solved, and the main objectives. This section will provide context for the analysis that follows.",
-        dataTitle: "Data Description",
-        dataDesc: "Description of the dataset used, its sources, structure, and key variables. Information about data cleaning and preparation steps.",
-        methodologyTitle: "Methodology",
-        methodology: "Explanation of the analytical approach, tools used, and reasoning behind chosen methods. Step-by-step breakdown of the analysis process.",
-        resultsTitle: "Results & Insights",
-        results: "Key findings from the analysis, visualizations, and insights discovered. Discussion of patterns, trends, or anomalies found in the data.",
+        overviewTitle: "🔍 Project Overview",
+        overview: `I performed data cleaning of global company layoffs dataset to prepare it for further analysis.<br>
+        <br>
+        <strong style="color: red;">•</strong> <strong>Tools:</strong> MySQL Workbench 8.0 CE <br>
+        <strong style="color: red;">•</strong> <strong>Database:</strong> Global layoffs data from 2020 to 2023. It includes information about companies, locations, industries, number of laid-off employees, layoff percentages, and investment amounts. <br>
+        <br>
+        <small><strong> Source: https://github.com/AlexTheAnalyst/MySQL-YouTube-Series/blob/main/layoffs.csv</strong></small>
+        `,
+        dataTitle: "🎯 Project Goals",
+        dataDesc: `Clean data for further research: remove duplicates, make row content consistent in style and format; get rid of NULL values where possible. <br>
+        <br>
+       <strong>Key Questions:</strong> <br>
+        <strong style="color: red;">•</strong> Can we remove duplicate data without losses? <br>
+        <strong style="color: red;">•</strong> How to identify unimportant data? Can we remove it? <br>
+        <strong style="color: red;">•</strong> Do we need to check column formats and fix them? <br>
+        `,
+        methodologyTitle: "💻 Key SQL Commands",
+       codeContent: `<code>
+<strong style="color: red;">ROW_NUMBER()</strong> and <strong style="color: red;">PARTITION BY</strong> — identified duplicates across all key rows <br>
+<strong style="color: red;">CTE (Common Table Expression)</strong> — created temporary tables to work with these duplicates <br>
+<strong style="color: red;">TRIM()</strong> — removed extra spaces and dots in names <br>
+<strong style="color: red;">JOIN</strong> — filled missing data from other records of the same company <br>
+</code>
+`, 
+        methodology: "",
+        resultsTitle: "💡 Results and Conclusions",
+        results: `The database has been cleaned. All duplicate records were removed, industry and country names were standardized. Date format was converted from text to DATE for correct time calculations. Records without key layoff information were removed, which made the dataset suitable for further analysis. <br>
+<br>
+        <img src="images/layoffs_cleaned.png" alt="result" width="100%"><br>
+<br>
+
+<small><strong> Check all code on github GitHub: https://github.com/AlexTheAnalyst/MySQL-YouTube-Series/blob/main/layoffs.csv</strong></small> 
+`
       }
     };
 
