@@ -11,7 +11,7 @@
   <style>
     body {
       margin: 0;
-      background-color: #FAFAFA;
+      background-color: #EAE6D7;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       color: #030027;
     }
@@ -36,14 +36,14 @@
 
     .container {
       padding: 20px 100px 40px 100px;
-      max-width: 1400px; 
+      max-width: 1000px; 
       margin: 0 auto;
     }
 
     .content-column {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 5px;
     }
 
     .box {
@@ -54,17 +54,18 @@
     .code-block {
       width: 100%;
       max-width: 100%;
-      height: 200px;
+      height: flex;
       overflow: auto;
       background-color: #F5F5F5;
       border: 1px solid #E0E0E0;
-      border-radius: 5px;
-      padding: 5px;
+      border-radius: 10px;
+      padding: 20px;
       font-family: 'Courier New', monospace;
-      font-size: 14px;
-      line-height: 1.4;
-      white-space: pre;
+      font-size: 20px;
+      line-height: 1.3;
+      white-space: normal;
       box-sizing: border-box;
+      
     }
 
     h1 {
@@ -95,6 +96,12 @@
       line-height: 1.6;
       margin-bottom: 15px;
     }
+
+    small {
+      font-size: 12px;          /* или 0.8em для относительного размера */ 
+      color: gray;              /* серый цвет */
+      font-style: italic;       /* курсив (опционально) */
+}
 
     .back-link {
       color: #151E3F;
@@ -149,7 +156,7 @@
       }
 
       .cat {
-        width: 80px;
+        width: 50px;
       }
     }
 
@@ -228,9 +235,11 @@
       <div class="box">
         <h2 data-i18n="overviewTitle">Project Overview</h2>
         <p data-i18n="overview">
-           
+          Brief description of the project, what problem it solved, and the main objectives.
+          This section will provide context for the analysis that follows.
         </p>
       </div>
+
 
       <div class="box">
         <h2 data-i18n="dataTitle">Data Description</h2>
@@ -248,43 +257,15 @@
         </p>
       </div>
 
-      <div class="code-block">
-        <pre><code>
-       <strong style="color: blueviolet;">INSERT INTO</strong> employee_salary (employee_id, first_name, last_name, occupation, salary, dept_id)
-<strong style="color: blueviolet;">VALUES</strong>
-(1, 'Leslie', 'Knope', 'Deputy Director of Parks and Recreation', 75000,1),
-(2, 'Ron', 'Swanson', 'Director of Parks and Recreation', 70000,1),
-(3, 'Tom', 'Haverford', 'Entrepreneur', 50000,1),
-(4, 'April', 'Ludgate', 'Assistant to the Director of Parks and Recreation', 25000,1),
-(5, 'Jerry', 'Gergich', 'Office Manager', 50000,1),
-(6, 'Donna', 'Meagle', 'Office Manager', 60000,1),
-(7, 'Ann', 'Perkins', 'Nurse', 55000,4),
-(8, 'Chris', 'Traeger', 'City Manager', 90000,3),
-(9, 'Ben', 'Wyatt', 'State Auditor', 70000,6),
-(10, 'Andy', 'Dwyer', 'Shoe Shiner and Musician', 20000, NULL),
-(11, 'Mark', 'Brendanawicz', 'City Planner', 57000, 3),
-(12, 'Craig', 'Middlebrooks', 'Parks Director', 65000,1);
-
-<strong style="color: blueviolet;">CREATE TABLE</strong> parks_departments (
-  department_id <strong style="color: blueviolet;">INT NOT NULL AUTO_INCREMENT</strong>,
-  department_name varchar(50) <strong style="color: blueviolet;">NOT NULL</strong>,
-  <strong style="color: blueviolet;">PRIMARY KEY</strong> (department_id)
-);
-
-<strong style="color: blueviolet;">INSERT INTO</strong> parks_departments (department_name)
-<strong style="color: blueviolet;">VALUES</strong>
-('Parks and Recreation'),
-('Animal Control'),
-('Public Works'),
-('Healthcare'),
-('Library'),
-('Finance');
-          </code></pre>
+      <div class="code-block" data-i18n="codeContent">
+        <code>
+<strong style="color: green;">ROW_NUMBER()</strong> и <strong style="color: green;">PARTITION BY</strong> — для определения дубликатов по всем ключевым строкам <br>
+<strong style="color: green;">CTE (Common Table Expression)</strong> — временные таблицы для работы с дубликатами <br>
+<strong style="color: green;">TRIM()</strong> — для удаления лишних пробелов и знаков в ячейках <br>
+<strong style="color: green;">JOIN</strong> — для обновления NULL значений из других записей той же компании <br>
+          </code>
       </div>
-    </div>
 
-    <br>
-    <br>
       <div class="box">
         <h2 data-i18n="resultsTitle">Results & Insights</h2>
         <p data-i18n="results">
@@ -292,10 +273,14 @@
           Discussion of patterns, trends, or anomalies found in the data.
         </p>
       </div>
-  </div>
 
-
-
+      <div class="box">
+        <h2 data-i18n="sourses">Sourses</h2>
+        <p data-i18n="gitlinks">
+          Key findings from the analysis, visualizations, and insights discovered.
+          Discussion of patterns, trends, or anomalies found in the data.
+        </p>
+      </div>
 
   <img id="catImage" alt="Random Cat" class="cat" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M60 20 L80 40 L100 20 L100 80 L20 80 L20 20 L40 40 Z' fill='%23FFB6C1'/%3E%3Ccircle cx='45' cy='50' r='3' fill='%23000'/%3E%3Ccircle cx='75' cy='50' r='3' fill='%23000'/%3E%3Cpath d='M55 60 Q60 65 65 60' stroke='%23000' fill='none' stroke-width='2'/%3E%3C/svg%3E" />
 
@@ -324,36 +309,105 @@
     const translations = {
       ru: {
         backLink: "← Назад",
-        caseTitle: "Очистка базы данных в SQL",
-        overviewTitle: "Обзор проекта",
-        overview: `
-        Инструменты: mySQL Workbench <br>
-        База данных: увольнения в ковид в странах мира <br>
-        Цель: анализ и поиск паттернов`,
-        dataTitle: "Вопросы бизнеса / Цели",
-        dataDesc: `Определить паттерны в увольнениях наиболее активные года в плане увольнений, определить страны и компании`,
-        methodologyTitle: "Ключевые SQL команды",
-        methodology: `Чистила в mySQL workbench. В ходе чистки сделала копию оригинальной таблицы, чтобы всегда иметь под рукой сырые данные. Добавила временную колонку, чтобы иметь возможность поискать дубликаты. Использовала CTE, команду PATRITION BY (OVER…). Но по большей части это работа с командами SELECT, FROM, WHERE.`,
-        resultsTitle: "Результаты и выводы",
-        results: `<img src="images/layoffs_cleaned.png" alt="result" width=100%> <br>
+        caseTitle: "Анализ базы данных в SQL",
+        overviewTitle: " 🔍 Обзор проекта",
+        overview: `Провела исследовательский анализ данных (EDA) массовых увольнений в компаниях мира для определения ключевых трендов и закономерностей в период с 2020 по 2023 годы. <br>
+        <br>
+      <strong style="color: red;">•</strong> <strong>Инструменты:</strong> MySQL Workbench 8.0 CE <br>
+      <strong style="color: red;">•</strong> <strong>База данных:</strong> Очищенные данные об увольнениях по всему миру, включающие информацию по компаниям, отраслям, странам, датам и объемам сокращений персонала.<br>
+      <br>
+      <small><strong> Источник: https://github.com/AlexTheAnalyst/MySQL-YouTube-Series/blob/main/layoffs.csv</strong></small>`,
+        dataTitle: " 🎯 Цели проекта",
+        dataDesc: `Провести исследовательский анализ для выявления паттернов массовых увольнений в период с 2020 по 2023 годы. <br>
+        <br>
+        <strong>Ключевые вопросы:</strong> <br>
+        <strong style="color: red;">•</strong> Какие компании, отрасли и страны показали больше всего от массовых увольнений? <br>
+        <strong style="color: red;">•</strong> Как менялась динамика увольнений по годам и месяцам? <br>
+         <strong style="color: red;">•</strong> Какие компании входят в топ-5 по увольнениям в каждом году? <br>`,
+        methodologyTitle: "💻 Ключевые SQL команды",
+        codeContent: `<code>
+<strong style="color: red;">GROUP BY </strong> с агрегатными функциями <strong style="color: red;">(SUM, MAX)</strong> — для подсчёта общих показателей по компаниям, отраслям и странам <br>
+<strong style="color: red;">YEAR() SUBSTRING()</strong> и <strong style="color: red;">SUBSTRING()</strong> — для извлечения временных периодов и группировки по годам/месяцам <br>
+<strong style="color: red;">(SUM OVER, DENSE_RANK) </strong> — оконные функции для расчёта итогов и рангов <br>
+<strong style="color: red;">CTE (Common Table Expression)</strong> — для создания несколько сложных многоуровневых запросов с рейтингами компаний <br>
+</code>
+`,
+        methodology: ``,
+        resultsTitle: "💡 Результаты и выводы",
+        results: `
+        Наиболее пострадавшими отраслями стали потребительский сектор, ритейл, транспорт, финансы и другие. При этом компании стадии Post-IPO показали максимальные объемы сокращений персонала. <br>
+        <br>
+        По странам топ-5 — США, Индия, Нидерланды, Швеция, Бразилия. <br>
+        <br>
+Несмотря на то, что самые большие цифры увольнений по месяцам показывает 2022 год, именно в 2023 год было уволено больше всего сотрудников.<br>
+<br>
+<strong>Топ-5 компаний по увольнению за каждый год:</strong><br>
+<strong style="color: red;">•</strong>  2020 — Uber, Booking, Groupon, Swiggy, Airbnb <br>
+<strong style="color: red;">•</strong>  2021 — Bytedance, Katerra, Zillow, Instacart, WhiteHat Jr <br>
+<strong style="color: red;">•</strong>  2022 — Meta, Amazon, Cisco, Peloton, Carvana <br>
+<strong style="color: red;">•</strong> 2023 — Google, Microsoft, Ericsson, Amazon, Salesforce <br>
+ <br> 
+        <br>
+        <img src="картинка!" alt="result" width="100%"> <br>
         
-        /картинка/ + пояснение `,
+       
+ `,
+ sourses:`⛓️‍💥 Источники` ,
+ gitlinks:`<strong style="color: red;">•</strong> <a href="https://github.com/AlexTheAnalyst/MySQL-YouTube-Series/blob/main/layoffs.csv">Посмотреть весь код на GitHub</a> <br>
+<strong style="color: red;">•</strong> <a href="https://github.com/AlexTheAnalyst/MySQL-YouTube-Series/blob/main/layoffs.csv">Посмотреть очищенную базу данных на GitHub</a>
+ </strong> ` 
       },
       en: {
-        backLink: "← Back to main page",
-        caseTitle: " SQL EDA project",
-        overviewTitle: " Project Overview",
-        overview: `Tool: mySQL workbench<br>
-          Database: World lay-off overview<br>
-          Goal: analyze and find patterns<br>`,
-        dataTitle: " Business questions / Goal",
-        dataDesc: " Whats your favourite colour?",
-        methodologyTitle: "Key SQL queries",
-        methodology: "Explanation of the analytical approach, tools used, and reasoning behind chosen methods. Step-by-step breakdown of the analysis process.",
-        resultsTitle: "Results & Insights",
-        results: `<img src="images/layoffs_cleaned.png" alt="result" width=100%> <br>
-         small description and picture of results (perhaps with comments) 
+        backLink: "← Back",
+        caseTitle: "SQL cleaning project",
+        overviewTitle: "🔍 Project Overview",
+        overview: `I conducted Exploratory Data Analysis (EDA) of global company layoffs to identify key trends and patterns from 2020 to 2023. <br>
+        <br>
+        <strong style="color: red;">•</strong> <strong>Tools:</strong> MySQL Workbench 8.0 CE <br>
+        <strong style="color: red;">•</strong> <strong>Database:</strong> Cleaned global layoffs data including information about companies, industries, countries, dates, and staff reduction volumes. <br>
+        <br>
+        <small><strong> Source: https://github.com/AlexTheAnalyst/MySQL-YouTube-Series/blob/main/layoffs.csv</strong></small>
         `,
+        dataTitle: "🎯 Project Goals",
+        dataDesc: `Conduct exploratory analysis to identify mass layoff patterns from 2020 to 2023.  <br>
+        <br>
+       <strong>Key Questions:</strong> <br>
+        <strong style="color: red;">•</strong> Which companies, industries, and countries suffered most from mass layoffs? <br>
+        <strong style="color: red;">•</strong> How did layoff trends change by years and months? <br>
+        <strong style="color: red;">•</strong> Which companies are in the top-5 for layoffs in each year? <br>
+        `,
+        methodologyTitle: "💻 Key SQL Commands",
+       codeContent: `<code>
+<strong style="color: red;">GROUP BY </strong> with aggregate functions <strong style="color: red;">(SUM, MAX)</strong> — to calculate total metrics by companies, industries, and countries <br>
+<strong style="color: red;">YEAR() SUBSTRING()</strong> and <strong style="color: red;">SUBSTRING()</strong> — to extract time periods and group by years/months <br>
+<strong style="color: red;">(SUM OVER, DENSE_RANK)</strong> — window functions for calculating totals and rankings <br>
+<strong style="color: red;">CTE (Common Table Expression)</strong> — to create complex multi-level queries with company rankings <br>
+</code>
+`, 
+        methodology: "",
+        resultsTitle: "💡 Results and Conclusions",
+        results: `The most affected industries were consumer goods, retail, transport, finance, and others. Post-IPO stage companies showed the highest staff reduction volumes.  <br>
+<br>
+Top-5 countries by layoffs: USA, India, Netherlands, Sweden, Brazil.<br>
+<br>
+Although 2022 showed the biggest layoff numbers by months, 2023 was the year when most employees were laid off overall. <br>
+<br>
+<strong>Top-5 companies by layoffs for each year: </strong><br>
+<strong style="color: red;">•</strong>  2020 — Uber, Booking, Groupon, Swiggy, Airbnb <br>
+<strong style="color: red;">•</strong>  2021 — Bytedance, Katerra, Zillow, Instacart, WhiteHat Jr <br>
+<strong style="color: red;">•</strong>  2022 — Meta, Amazon, Cisco, Peloton, Carvana <br>
+<strong style="color: red;">•</strong> 2023 — Google, Microsoft, Ericsson, Amazon, Salesforce <br>
+ <br> 
+
+        <img src="картинка!" alt="result" width="100%"><br>
+<br>
+
+<small><strong> Check all code on github GitHub: https://github.com/AlexTheAnalyst/MySQL-YouTube-Series/blob/main/layoffs.csv</strong></small> 
+`,
+ sourses:`⛓️‍💥 Sources` ,
+ gitlinks:`<strong style="color: red;">•</strong> <a href="https://github.com/AlexTheAnalyst/MySQL-YouTube-Series/blob/main/layoffs.csv">Check the code on GitHub</a> <br>
+<strong style="color: red;">•</strong> <a href="https://github.com/AlexTheAnalyst/MySQL-YouTube-Series/blob/main/layoffs.csv">Check the clean database on GitHub</a>
+ </strong> ` 
       }
     };
 
@@ -387,4 +441,3 @@
 
 </body>
 </html>
-
