@@ -252,7 +252,8 @@
       <div class="box">
         <h2 data-i18n="methodologyTitle">Methodology</h2>
         <p data-i18n="methodology">
-         
+          Explanation of the analytical approach, tools used, and reasoning behind chosen methods.
+          Step-by-step breakdown of the analysis process.
         </p>
       </div>
 
@@ -347,32 +348,32 @@
         backLink: "← Back",
         caseTitle: "SQL cleaning project",
         overviewTitle: "🔍 Project Overview",
-        overview: `I performed data cleaning of global company layoffs dataset to prepare it for further analysis.<br>
+        overview: `I completed comprehensive data cleaning and preprocessing of used car data to prepare the database for further analysis.<br>
         <br>
-        <strong style="color: red;">•</strong> <strong>Tools:</strong> MySQL Workbench 8.0 CE <br>
-        <strong style="color: red;">•</strong> <strong>Database:</strong> Global layoffs data from 2020 to 2023. It includes information about companies, locations, industries, number of laid-off employees, layoff percentages, and investment amounts. <br>
+        <strong style="color: red;">•</strong> <strong>Tools:</strong> Jupyter Notebook, pandas, numpy, matplotlib  <br>
+        <strong style="color: red;">•</strong> <strong>Database:</strong> Used car data including technical specifications, engine parameters, fuel consumption and prices (205 records, 26 features). <br>
         <br>
-        <small><strong> Source: https://github.com/AlexTheAnalyst/MySQL-YouTube-Series/blob/main/layoffs.csv</strong></small>
+        <small><strong> Source: https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0101EN-SkillsNetwork/labs/Data%20files/auto.csv</strong></small>
         `,
         dataTitle: "🎯 Project Goals",
-        dataDesc: `Clean data for further research: remove duplicates, make row content consistent in style and format; get rid of NULL values where possible. <br>
+        dataDesc: `Clean and prepare data for further analysis. <br>
         <br>
        <strong>Key Questions:</strong> <br>
-        <strong style="color: red;">•</strong> Can we remove duplicate data without losses? <br>
-        <strong style="color: red;">•</strong> How to identify unimportant data? Can we remove it? <br>
-        <strong style="color: red;">•</strong> Do we need to check column formats and fix them? <br>
+        <strong style="color: red;">•</strong> How to properly handle missing values? <br>
+        <strong style="color: red;">•</strong> Which features need normalization and standardization for correct analysis? <br>
+        <strong style="color: red;">•</strong> Do we need to convert measurement units for better data interpretation? <br>
         `,
         methodologyTitle: "💻 Key SQL Commands",
        codeContent: `<code>
-<strong style="color: red;">ROW_NUMBER()</strong> and <strong style="color: red;">PARTITION BY</strong> — identified duplicates across all key rows <br>
-<strong style="color: red;">CTE (Common Table Expression)</strong> — created temporary tables to work with these duplicates <br>
-<strong style="color: red;">TRIM()</strong> — removed extra spaces and dots in names <br>
-<strong style="color: red;">JOIN</strong> — filled missing data from other records of the same company <br>
+<strong style="color: red;">df.replace()</strong> и <strong style="color: red;"> fillna()</strong> — to replace "?" symbols with NaN and fill gaps with average values <br>
+<strong style="color: red;">astype()</strong> — to convert data types to correct formats (float, int) <br>
+<strong style="color: red;">dropna()()</strong> — to remove rows with missing target values (price) <br>
+<strong style="color: red;">df['city-L/100km'] = round(235/df["city-mpg"], 2)</strong> — to convert fuel consumption units (mpg → L/100km) <br>
 </code>
 `, 
         methodology: "",
         resultsTitle: "💡 Results and Conclusions",
-        results: `The database has been cleaned. All duplicate records were removed, industry and country names were standardized. Date format was converted from text to DATE for correct time calculations. Records without key layoff information were removed, which made the dataset suitable for further analysis. <br>
+        results: `The database has been cleaned. Missing values in numerical cells were filled with average values, missing values in categorical cells were replaced with the most frequent values. Fuel consumption conversion from mpg to L/100km was completed, and car dimension characteristics were normalized. <br>
 <br>
         <img src="images/layoffs_cleaned.png" alt="result" width="100%"><br>
 <br>
@@ -380,8 +381,7 @@
 <small><strong> Check all code on github GitHub: https://github.com/AlexTheAnalyst/MySQL-YouTube-Series/blob/main/layoffs.csv</strong></small> 
 `,
  sourses:`⛓️‍💥 Sources` ,
- gitlinks:`<strong style="color: red;">•</strong> <a href="https://github.com/AlexTheAnalyst/MySQL-YouTube-Series/blob/main/layoffs.csv">Check the code on GitHub</a> <br>
-<strong style="color: red;">•</strong> <a href="https://github.com/AlexTheAnalyst/MySQL-YouTube-Series/blob/main/layoffs.csv">Check the clean database on GitHub</a>
+ gitlinks:`<strong style="color: red;">•</strong> <a href="pandasclean.html">Check all project</a> <br>
  </strong> ` 
       }
     };
@@ -416,4 +416,3 @@
 
 </body>
 </html>
-
